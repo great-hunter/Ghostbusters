@@ -12,6 +12,7 @@
     rel="stylesheet"
   />
   <link rel="stylesheet" href="css/normalize.css">
+  <link rel="stylesheet" href="css/jquery.fancybox.min.css">
   <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
@@ -20,17 +21,20 @@
     <a href="/" class="header-logo">
       <img width="68" src="img/logo.png" alt="Logo: film" class="logo">
     </a>
-    <input type="search" class="search-input" placeholder="Поиск по фильмам...">
-    <nav class="navigation">
-      <a href="#" class="navigation-link">Фильмы</a>
-      <a href="#" class="navigation-link">ТВ</a>
-      <a href="#" class="navigation-link">Новости</a>
-      <a href="#" class="navigation-link">О сервисе</a>
-    </nav>
-    <div class="button-group">
-      <button class="button sign-up">Регистрация</button>
-      <button class="button login">Войти</button>
+    <div class="m-menu">
+      <input type="search" class="search-input" placeholder="Поиск по фильмам...">
+      <nav class="navigation">
+        <a href="#" class="navigation-link">Фильмы</a>
+        <a href="#" class="navigation-link">ТВ</a>
+        <a href="#" class="navigation-link">Новости</a>
+        <a href="#" class="navigation-link">О сервисе</a>
+      </nav>
+      <div class="button-group">
+        <button class="button sign-up">Регистрация</button>
+        <button class="button login">Войти</button>
+      </div>
     </div>
+    <!-- /.m-menu -->
     <div class="mobile-buttons">
       <button class="search-button">
         <img src="img/search-icon.svg" alt="search">
@@ -48,10 +52,14 @@
       <div class="film-wrapper">
         <div class="film-trailer">
           <img src="img/poster.jpg" alt="Poster" class="poster">
-          <button class="trailer-button">
+          <a 
+           data-fancybox
+           href="https://www.youtube.com/watch?v=o705uydkgew" 
+           class="trailer-button"
+          >
             <img class="trailer-button-icon" src="img/play.svg" alt="play">
             <span class="trailer-button-text">Посмотреть трейлер</span>
-          </button>
+          </a>
         </div>
         <!-- /.film-trailer -->
         <div class="film-text">
@@ -225,8 +233,11 @@
     <!-- /.container -->
   </section>
 
+  <script src="js/jquery-3.6.0.min.js"></script>
+  <script src="js/jquery.fancybox.min.js"></script>
+
   <script src="js/main.js"></script>
 
 </body>
 </html>
-<!-- 40 : 45 -->
+<!-- 07 : 08 -->
