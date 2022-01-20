@@ -8,6 +8,9 @@ body {
   font-weight: 400;
   color: #363636;
 }
+.no-scroll {
+  overflow: hidden;
+}
 .header {
   display: flex;
   align-items: center;
@@ -284,10 +287,18 @@ body {
   color: #363636;
   font-weight: 900;
 }
+.tab {
+  cursor: pointer;
+}
 .tabs-content {
-  display: flex;
+  display: none;
   align-items: center;
   flex-wrap: wrap;
+  visibility: hidden;
+}
+.tabs-content.visible {
+  display: flex;
+  visibility: visible;
 }
 .card {
   display: flex;
@@ -328,12 +339,14 @@ body {
   display: flex;
   flex-wrap: wrap;
   justify-content: space-between;
+  
 }
 .news-card {
   flex-basis: 23%;
   background-color: #fff;
   padding: 30px;
   border-radius: 5px;
+  height: 171px;
 }
 .news-date {
   font-style: normal;
@@ -348,6 +361,18 @@ body {
   line-height: 16px;
   color: #000;
   margin-top: 14px;
+  
+}
+.button-next {
+  display: none;
+  background-color: transparent;
+  border: none;
+  position: absolute;
+  right: 0;
+  top: 50%;
+  transform: translateY(-50%);
+  cursor: pointer;
+  z-index: 99;
 }
 
 @media (max-width: 1200px) {
@@ -432,13 +457,24 @@ body {
     display: none;
     flex-direction: column;
     align-items: center;
-    justify-content: center;
+    justify-content: space-around;
     position: fixed;
     left: 0;
-    top: 0;
+    top: 80px;
     right: 0;
     bottom: 0;
+    height: calc(100% - 80px);
     background: #5671F6;
+  }
+  .m-menu.active {
+    display: flex;
+  }
+  .navigation {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin: 0;
   }
   .button-group {
     height: auto;
@@ -446,7 +482,26 @@ body {
     flex-direction: column;
   }
   .search-input {
+    width: 260px;
+    height: 50px;
+    border-radius: 5px;
+    border: none;
+    background-image: none;
     margin: 0;
+  }
+  .navigation-link {
+    color: #fff;
+    margin-right: 0;
+    margin-bottom: 18px;
+  }
+  .navigation-link:last-child {
+    margin-bottom: 0;
+  }
+  .sign-up {
+    background-color: transparent;
+    color: #fff;
+    border: none;
+    margin-bottom: 30px;
   }
   .film {
     padding-top: 50px;
@@ -466,6 +521,12 @@ body {
   .news {
     padding-top: 50px;
     padding-bottom: 70px;
+  }
+  .news-card {
+    max-width: 90%;
+  }
+  .button-next {
+    display: block;
   }
   .mobile-buttons {
     display: block;
